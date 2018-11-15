@@ -1,0 +1,80 @@
+/* TYPOGRAPHY
+------------------------------------------------------------------ */
+
+body{
+    color: $color-text;
+    font: #{$base-font-size}/#{$baseline} $font-1;
+    margin: 0;
+}
+  
+a{
+    color: $color-link;
+  
+    &:hover{
+      color: $color-link-hover;
+    }
+}
+  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin-bottom: 1.3125rem;  // 21px/16
+    font-family: $font-2;
+    color: $color-light-text;
+    font-weight: normal;
+}
+  
+h1{
+    font-size: 3.375rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+h2{
+    font-size: 1.68rem;
+    font-weight: bold;
+}
+h3{
+    color: $color-heading;
+    font-size: 1.2rem;
+}
+h4{
+    font-size: 1rem;
+    font-weight: bold;
+}
+h5{
+    font-family: $font-1;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+h6{
+    font-family: $font-1;
+    font-size: 0.444rem;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.width-100{
+    width: 100%;
+}
+
+.bg-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $color-3;
+}

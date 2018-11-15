@@ -1,0 +1,14 @@
+/* BUTTONS
+------------------------------------------------------------------ */
+
+.button{
+    display: block;
+    height: 3rem;
+    padding: 0 1rem;
+    outline: none;
+    border: 1px solid;
+    font-size: 1.125rem;
+  
+    @include border-radius(3px);
+  
+}

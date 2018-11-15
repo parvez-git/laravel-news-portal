@@ -1,0 +1,134 @@
+/* PAGES
+------------------------------------------------------------------ */
+
+.page-header{
+    background-color: $color-5;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #f5f5f5;
+
+    h1{
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 500; 
+        color: $color-3;       
+        font-weight: bold;    
+        position: relative;
+        padding: 1rem;
+        margin: 0;
+    
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.4rem;
+            height: 100%;
+            content: '';
+            background-color: $color-red;
+        }
+    }
+
+    ul{
+        display: flex;
+        padding: 1rem;
+
+        li{
+            padding: 0 0.3rem;
+            align-self: center;
+
+            &:nth-child(even){
+                color: $color-link-hover;
+            }
+        }
+
+        a{
+            color: $color-heading;
+            text-decoration: none;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    ul.border-vertical{
+        position: relative;
+    
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.4rem;
+            height: 100%;
+            content: '';
+            background-color: $color-red;
+        }
+    }
+}
+
+.news-single{
+
+    h1{
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 500; 
+        color: $color-3;
+        padding: 0 1rem;
+    }
+
+    p,
+    ul{
+        padding: 0 1rem;
+    }
+
+    li{
+        display: inline-block;
+        margin-bottom: .5rem;
+
+        &:nth-child(2){
+            float: right;
+            padding-left: .8rem;
+        }
+    }
+}
+
+// ARCHIVE PAGE
+.archive-news{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .news-item{
+        flex-basis: 32%;
+        margin-bottom: 2rem;
+
+        h2{
+            margin: 0;
+            padding: 1.2rem 0.8rem;
+            color: $color-1;
+            text-align: center;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: .15rem;
+            background-color: $color-3;
+        }
+        
+        a{
+            border-left: 1px solid $color-border;
+            border-right: 1px solid $color-border;
+            border-bottom: 1px solid $color-border;
+            color: $color-6;
+            font-size: 1.2rem;
+            display: block;
+            padding: 0.4rem 0.8rem;
+            text-decoration: none;
+
+            @include box-transition(color 0.3s ease);
+
+            &:hover{
+                text-decoration: underline;
+                color: $color-heading;
+            }
+        }
+    }
+}

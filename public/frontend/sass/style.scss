@@ -1,0 +1,28 @@
+/* ******************************************************************
+** Project Name:        DEVCAN
+** Project Description: A simple News Portal Theme
+** Author:              parvez alam
+** Author URL:          http://developercanvas.com
+** Version:             1.0.0
+* ******************************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto');
+@import url('https://use.fontawesome.com/releases/v5.4.2/css/all.css');
+
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/utilities";
+
+@import "base/normalize";
+
+@import "modules/buttons";
+@import "modules/dividers";
+
+@import "theme/theme";
+
+@import "layout/header";
+@import "layout/main";
+@import "layout/sidebar";
+@import "layout/footer";
+
+@import "layout/page";

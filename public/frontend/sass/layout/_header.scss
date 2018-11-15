@@ -1,0 +1,187 @@
+/* HEADER SECTION
+------------------------------------------------------------------ */
+.header-top-area{
+    background-color: $color-4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.header-top {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    justify-content: space-between;
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+
+        li{
+            color: $color-heading;
+            font-size: .8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+
+            span{
+                padding-right: 1.2rem;
+                color: $color-red;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            a{
+                color: $color-red;
+                padding-left: .5rem;
+                text-decoration: none;
+    
+                &:hover{
+                    color: $color-3;
+                }
+            }
+        }
+    }
+    .info{
+        text-align: left;
+
+        a{
+            padding-right: 1.2rem;
+            color: $color-heading;
+            position: relative;
+            
+            &::before{
+                content: '|';
+                color: $color-border;
+                position: absolute;
+                left: -8px;
+                top: -5px;
+            }
+        }
+    }
+    .socials{
+        text-align: right;
+
+        a{
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// LOGO
+.header-logo{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 15px; 
+
+    .logo{
+        flex-basis: 30%;
+
+        a{
+            font-size: 3rem;
+            color: $color-red;
+            font-weight: bolder;
+            text-decoration: none;
+            line-height: 1;
+        }
+    }
+    .ads{
+        flex-basis: 70%;
+
+        outline: 1px dotted;
+    }
+}
+
+// MAIN MENU
+.header-menu-container{
+    background-color: $color-heading;
+}
+.header-menu-container .menu-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+
+.header-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    nav{
+        flex-grow: 10;
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            li{
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+                a{
+                    font-family: $font-2;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: $color-1;
+                    font-size: 0.8rem;
+                    text-align: left;
+                    text-decoration: none;
+                    letter-spacing: 0.12rem;
+
+                    &:hover{
+                        text-decoration: underline;
+                        color: $color-2;
+                    }
+                }
+            }
+        }
+        
+
+    }
+    .search{
+        flex-grow: 2;
+        text-align: right;
+        align-self: center;
+
+        form{
+            position: relative;
+
+            #searchinput {
+                border: 1px solid $color-1;
+                outline: none;
+                padding: 0.5rem .65rem;
+                width: 0;
+                position: absolute;
+                right: 12px;
+                z-index: 2;
+                
+                @include box-transition(all 0.3s ease);
+
+                &:focus{
+                    width: 200px;
+                    background-color: $color-1;
+                }
+            }
+            
+            .search-btn{
+                color: $color-1;
+                padding: 0.5rem .65rem;
+                border: 1px solid $color-1;
+                background-color: $color-heading;
+                cursor: pointer;
+                position: relative;
+                z-index: 3;
+            }
+
+            &:hover #searchinput{
+                width: 200px;
+            }
+
+        }
+    }
+}

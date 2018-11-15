@@ -1,0 +1,85 @@
+/* FOOTER SECTION
+------------------------------------------------------------------ */
+.footer-top-area{
+    background-color: $color-3;
+    color: $color-1;
+    padding-top: 30px;
+    padding-bottom: 15px;
+
+    .footer-top{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 30px;
+
+        h2{
+            color: $color-1;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            margin-left: 1rem;
+            position: relative;
+    
+            &::before{
+                position: absolute;
+                top: 0;
+                left: -1rem;
+                width: 0.4rem;
+                height: 100%;
+                content: '';
+                background-color: $color-red;
+            }
+        }
+
+        .section-item{
+            border: 1px solid $color-6;
+            margin-top: -1px;
+
+            a{
+                color: $color-1;
+            }
+            li{
+                display: inline-block;
+                color: $color-1;
+
+                &:last-child{
+                    float: left;
+                    padding-right: 12px;
+                    padding-top: 2px;
+                }
+            }
+        }
+
+        .news-category-list{
+            h3{
+                font-size: .95rem;
+                text-transform: capitalize;
+                margin: 0.4rem 0;
+    
+                i{
+                    color: $color-light-text;
+                    padding-right: 0.4rem;
+                }
+    
+                span{
+                    text-align: right;
+                    float: right;
+                    padding-right: 1rem;
+                    color: $color-1;
+                }
+            }
+        }
+    }
+}
+.footer-bottom-area{
+    background-color: $color-heading;
+
+    .footer-bottom{
+        p{
+            margin: 0;
+            padding: 10px 0;
+            color: $color-2;
+            text-align: center;
+        }
+    }
+}

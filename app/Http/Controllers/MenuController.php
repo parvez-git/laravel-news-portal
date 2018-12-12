@@ -21,8 +21,9 @@ class MenuController extends Controller
     public function create()
     {
         $categories = Category::with('newslist')->orderBy('name','asc')->get();
+        $menus = Menu::where('parent_id',0)->orderBy('name','asc')->get();
 
-        return view('backend.menu.create', compact('categories'));
+        return view('backend.menu.create', compact('categories','menus'));
     }
 
 
@@ -61,7 +62,9 @@ class MenuController extends Controller
 
     public function edit(Menu $menu)
     {
-        return view('backend.menu.edit', compact('menu'));
+        $menus = Menu::where('parent_id',0)->orderBy('name','asc')->get();
+        
+        return view('backend.menu.edit', compact('menu','menus'));
     }
 
 
@@ -101,11 +104,11 @@ class MenuController extends Controller
 
         switch ($menutype) {
             case 'category':
-                $menuitems = Category::select('id','name')->orderBy('name','asc')->get();
+                $menuitems = Category::select('id','name')->where('status',1)->orderBy('name','asc')->get();
                 break;
 
             case 'news':
-                $menuitems = News::select('id','title as name')->orderBy('title','asc')->get();
+                $menuitems = News::select('id','title as name')->where('status',1)->orderBy('title','asc')->get();
                 break;
             
             default:

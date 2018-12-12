@@ -46,7 +46,13 @@
 
                             <div class="form-group">
                                 <label>Menu Parent</label>
-                                <input type="number" name="parent_id" class="form-control" id="editparentid" min="0" value="{{ $menu->parent_id }}">
+                                <select name="parent_id" class="form-control" style="width: 100%;">
+                                    <option selected disabled> --Select Parent Menu-- </option>
+                                    @foreach ($menus as $item)
+                                        <option value="{{ $item->id }}" @if($item->id==$menu->parent_id){{'selected'}}@endif>{{ $item->name }}</option>
+                                    @endforeach
+                                    <option value="10000" @if(10000==$menu->parent_id){{'selected'}}@endif>More..</option>
+                                </select>
                             </div>
 
                             <div class="form-group">

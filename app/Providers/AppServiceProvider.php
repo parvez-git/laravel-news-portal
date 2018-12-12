@@ -2,11 +2,12 @@
 
 namespace App\Providers;
 
-use App\News;
-use App\Category;
 use App\Menu;
+use App\News;
 use App\Setting;
+use App\Category;
 use App\Advertisement;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -18,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
+        
         if (! $this->app->runningInConsole()) {
 
             view()->composer(
@@ -31,7 +34,8 @@ class AppServiceProvider extends ServiceProvider
             });
 
             view()->composer('frontend.layout.partials.mainmenu', function($view) {
-                $view->with('mainmenus', Menu::orderBy('menuorder','asc')->get());
+                $menus = Menu::all()->groupBy('parent_id');
+                $view->with('mainmenus', $menus);
             });
 
             view()->composer('frontend.layout.partials.footer', function($view) {

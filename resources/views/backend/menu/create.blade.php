@@ -79,7 +79,12 @@
 
                             <div class="form-group">
                                 <label>Menu Parent</label>
-                                <input type="number" name="parent_id" class="form-control" id="parent_id" min="0" value="0">
+                                <select name="parent_id" class="form-control" style="width: 100%;">
+                                    <option selected disabled> --Select Parent Menu-- </option>
+                                    @foreach ($menus as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="box-footer">

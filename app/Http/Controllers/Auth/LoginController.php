@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -35,5 +39,39 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleProviderCallback()
+    {
+        $guser = Socialite::driver('google')->user();
+
+        $existuser = User::where('email',$guser->getEmail())->first();
+
+        if ($existuser) {
+
+            Auth::login($existuser);
+
+            return redirect()->route('dashboard');
+
+        } else {
+
+            $user = User::create([
+                'name'      => $guser->getName(),
+                'email'     => $guser->getEmail(),
+                'password'  => Hash::make('123456'),
+                'role_id'   => 3,
+                'status'    => 1
+            ]);
+
+            Auth::login($user);
+
+            return redirect()->route('dashboard');
+        }
     }
 }

@@ -209,8 +209,8 @@ ul {
       flex-wrap: wrap;
       justify-content: space-between; }
       .header-menu nav ul li {
-        padding-top: 1rem;
-        padding-bottom: 1rem; }
+        padding: 1rem;
+        position: relative; }
         .header-menu nav ul li a {
           font-family: "Roboto", sans-serif;
           font-weight: 600;
@@ -223,6 +223,33 @@ ul {
           .header-menu nav ul li a:hover {
             text-decoration: underline;
             color: #EFEFEF; }
+        .header-menu nav ul li ul {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 58px;
+          width: 190px;
+          padding: 0.5rem 1rem;
+          background-color: #d32c2c;
+          display: none;
+          z-index: 2;
+          -webkit-transition: display 10.3s ease;
+          -moz-transition: display 10.3s ease;
+          transition: display 10.3s ease; }
+          .header-menu nav ul li ul li {
+            padding: 0.3rem 0; }
+        .header-menu nav ul li i.fa-angle-down {
+          color: #777;
+          padding-left: 0.3rem; }
+        .header-menu nav ul li:hover {
+          background-color: #d32c2c; }
+          .header-menu nav ul li:hover ul {
+            display: block; }
+          .header-menu nav ul li:hover i.fa-angle-down {
+            color: #d32c2c; }
+        .header-menu nav ul li:last-child ul {
+          right: 0;
+          left: auto; }
   .header-menu .search {
     flex-grow: 2;
     text-align: right;

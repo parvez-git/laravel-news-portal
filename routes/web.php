@@ -14,6 +14,11 @@ Route::post('/logout', 'LoginController@logout')->name('logout');
 Route::get('/register', 'RegisterController@register')->name('register');
 Route::post('/register', 'RegisterController@registration')->name('register');
 
+// SOCIAL LOGIN
+Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+
+// 404
 Route::get('/nopermission', function(){ return back(); })->name('nopermission');
 
 // ONLY ADMIN

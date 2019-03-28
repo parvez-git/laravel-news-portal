@@ -5,22 +5,24 @@
                 <ul>
                     <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a></li>
 
-                    @foreach($mainmenus[0] as $mainmenu)
-                    <li>
-                        <a href="{{ $mainmenu->menu_url }}">{{ $mainmenu->name }}</a>
-                        
-                        @if(isset($mainmenus[$mainmenu->id]))
-                            <i class="fas fa-angle-down"></i>
-                            <ul>
-                                @foreach($mainmenus[$mainmenu->id] as $mainmenu)
-                                    <li>
-                                        <a href="{{ $mainmenu->menu_url }}">{{ $mainmenu->name }}</a> 
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @endif
-                    </li>
-                    @endforeach
+                    @if(isset($mainmenus[0]))
+                        @foreach($mainmenus[0] as $mainmenu)
+                        <li>
+                            <a href="{{ $mainmenu->menu_url }}">{{ $mainmenu->name }}</a>
+                            
+                            @if(isset($mainmenus[$mainmenu->id]))
+                                <i class="fas fa-angle-down"></i>
+                                <ul>
+                                    @foreach($mainmenus[$mainmenu->id] as $mainmenu)
+                                        <li>
+                                            <a href="{{ $mainmenu->menu_url }}">{{ $mainmenu->name }}</a> 
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        </li>
+                        @endforeach
+                    @endif
 
                     <li>
                         <a href="javascript:void(0)"><i class="fas fa-ellipsis-v"></i></a>

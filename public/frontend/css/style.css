@@ -281,6 +281,20 @@ ul {
       .header-menu .search form:hover #searchinput {
         width: 200px; }
 
+.breaking-news-ticker {
+  width: 50%;
+  height: auto !important;
+  line-height: 24px !important;
+  font-size: 12px;
+  border: solid 1px #eeeeee; }
+  .breaking-news-ticker li a {
+    color: #222222 !important;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize; }
+    .breaking-news-ticker li a:hover {
+      color: #ce2525 !important; }
+
 /* MAIN CONTENT AREA
 ------------------------------------------------------------------ */
 .section {

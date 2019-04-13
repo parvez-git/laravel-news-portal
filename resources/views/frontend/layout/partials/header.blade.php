@@ -22,6 +22,25 @@
 
                 </ul>
             </div>
+
+            @if(isset($newstickers) && count($newstickers) > 0) 
+                <div class="breaking-news-ticker" id="breakingnewsticker">
+                    <div class="bn-label">Breaking News</div>
+                    <div class="bn-news">
+                        <ul>
+                            @foreach ($newstickers as $key => $news)
+                                <li><a href="{{ route('page.news',$news->slug) }}">{{ ++$key}}. {{ $news->title }}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="bn-controls">
+                        <button><span class="bn-arrow bn-prev"></span></button>
+                        <button><span class="bn-action"></span></button>
+                        <button><span class="bn-arrow bn-next"></span></button>
+                    </div>
+                </div>
+            @endif
+
             <div class="socials">
                 <ul>
                     @if(isset($headersettings) && $headersettings['facebook'])

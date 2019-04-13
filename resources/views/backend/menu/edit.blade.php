@@ -11,7 +11,7 @@
     <section class="content-header">
         <h1>
             Menu
-            <small><a href="{{ route('admin.menus.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i class="fa fa-plus"></i> BACK</a></small>
+            <small><a href="{{ route('admin.menus.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i class="fa fa-arrow-left"></i> BACK</a></small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label>Menu Parent</label>
                                 <select name="parent_id" class="form-control" style="width: 100%;">
-                                    <option selected disabled> --Select Parent Menu-- </option>
+                                    <option selected value="0"> --Select Parent Menu-- </option>
                                     @foreach ($menus as $item)
                                         <option value="{{ $item->id }}" @if($item->id==$menu->parent_id){{'selected'}}@endif>{{ $item->name }}</option>
                                     @endforeach

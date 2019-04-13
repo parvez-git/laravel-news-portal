@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Setting;
+use App\Category;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -70,5 +71,31 @@ class SettingController extends Controller
         );
 
         return back()->with('success', 'Setting updated successfully.')->with($notification);
+    }
+
+
+    public function breakingNews() 
+    {
+        $categories = Category::all();
+        $setting    = Setting::first();
+
+        return view('backend.settings.breaking-news',compact('categories','setting'));
+    }
+
+    public function storeBreakingNews(Request $request)
+    {
+        $request->validate([
+            'breaking_news_category_id' => 'required',
+        ]);
+
+        $setting = new Setting();
+
+        $setting->updateOrCreate(['id' => 1],
+        [
+          'breaking_news_category_id' => $request->breaking_news_category_id
+        ]
+      );
+
+      return back()->with('message', 'Breaking news category updated successfully !');
     }
 }

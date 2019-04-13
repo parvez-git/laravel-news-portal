@@ -38,6 +38,12 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('mainmenus', $menus);
             });
 
+            view()->composer('frontend.layout.partials.header', function($view) {
+                $categoryid = Setting::first();
+                $newstickers = News::latest()->whereHas('category')->where('category_id',$categoryid->breaking_news_category_id)->where('status',1)->get();
+                $view->with('newstickers', $newstickers);
+            });
+
             view()->composer('frontend.layout.partials.footer', function($view) {
                 $view->with('footernewscategorylist', Category::has('newslist')->withCount('newslist')->orderBy('name','desc')->where('status',1)->get());
             });

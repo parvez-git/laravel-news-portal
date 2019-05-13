@@ -547,6 +547,21 @@ ul {
         float: right;
         padding-right: 1rem;
         color: #FFFFFF; }
+    .footer-top-area .footer-top .newsletter-subscription .mailbox,
+    .footer-top-area .footer-top .newsletter-subscription .submitbox {
+      width: 100%;
+      border: 0 solid;
+      padding: 12px;
+      outline: none;
+      font-size: 16px; }
+    .footer-top-area .footer-top .newsletter-subscription .mailbox {
+      margin-top: 15px;
+      margin-bottom: 15px; }
+    .footer-top-area .footer-top .newsletter-subscription .submitbox {
+      background-color: #d32c2c;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #F9F9F9; }
 
 .footer-bottom-area {
   background-color: #222; }

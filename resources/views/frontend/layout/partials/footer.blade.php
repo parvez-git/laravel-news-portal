@@ -24,7 +24,13 @@
 
             <div class="footer-column">
                 <h2>News Subscription</h2>
-
+                <div class="newsletter-subscription">
+                    <p>Stay updated and get our latest news right into your inbox and get awesome offers.</p>
+                    <form action="" method="">
+                        <input type="email" name="" class="mailbox" placeholder="yourmail@example.com">
+                        <input type="submit" value="Subscribe" class="submitbox">
+                    </form>
+                </div>
             </div>
 
         </div>

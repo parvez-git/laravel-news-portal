@@ -1,17 +1,16 @@
 /* FOOTER SECTION
 ------------------------------------------------------------------ */
-.footer-top-area{
+
+.footer-top-area {
     background-color: $color-3;
     color: $color-1;
     padding-top: 30px;
     padding-bottom: 15px;
-
-    .footer-top{
+    .footer-top {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
-
-        h2{
+        h2 {
             color: $color-1;
             text-transform: uppercase;
             font-size: 1.2rem;
@@ -19,8 +18,7 @@
             margin-bottom: 0.5rem;
             margin-left: 1rem;
             position: relative;
-    
-            &::before{
+            &::before {
                 position: absolute;
                 top: 0;
                 left: -1rem;
@@ -30,38 +28,32 @@
                 background-color: $color-red;
             }
         }
-
-        .section-item{
+        .section-item {
             border: 1px solid $color-6;
             margin-top: -1px;
-
-            a{
+            a {
                 color: $color-1;
             }
-            li{
+            li {
                 display: inline-block;
                 color: $color-1;
-
-                &:last-child{
+                &:last-child {
                     float: left;
                     padding-right: 12px;
                     padding-top: 2px;
                 }
             }
         }
-
-        .news-category-list{
-            h3{
+        .news-category-list {
+            h3 {
                 font-size: .95rem;
                 text-transform: capitalize;
                 margin: 0.4rem 0;
-    
-                i{
+                i {
                     color: $color-light-text;
                     padding-right: 0.4rem;
                 }
-    
-                span{
+                span {
                     text-align: right;
                     float: right;
                     padding-right: 1rem;
@@ -69,13 +61,33 @@
                 }
             }
         }
+        .newsletter-subscription {
+            .mailbox,
+            .submitbox {
+                width: 100%;
+                border: 0 solid;
+                padding: 12px;
+                outline: none;
+                font-size: 16px;
+            }
+            .mailbox {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            .submitbox {
+                background-color: $color-red;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $color-5;
+            }
+        }
     }
 }
-.footer-bottom-area{
-    background-color: $color-heading;
 
-    .footer-bottom{
-        p{
+.footer-bottom-area {
+    background-color: $color-heading;
+    .footer-bottom {
+        p {
             margin: 0;
             padding: 10px 0;
             color: $color-2;

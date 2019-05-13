@@ -1,7 +1,6 @@
 /node_modules
 /public/hot
 /public/storage
-/public/frontend/.sass-cache
 /storage/*.key
 /vendor
 /.idea
@@ -13,3 +12,9 @@ npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
+/public/frontend/.sass-cache
+/public/images/!favicon.ico
+/public/images/!default.png
+/public/images/!logo.png
+/public/images/!category.jpg
+/public/images/!post.jpg
